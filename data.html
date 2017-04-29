@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Расходы</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<script src="js/jquery/jquery-1.12.4.js"></script>
+	<script src="js/jquery/jquery-ui.js"></script>
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap-3.3.7-dist/css/bootstrap.css">
+	<link rel="stylesheet" href="js/jquery/jquery-ui.css">
+	<script src="js/priceformat/jquery.priceformat.min.js"></script>
+	<style type="text/css">
+		.custom-metens { position: relative; display: inline-block; }
+		.custom-metens-toggle { position: absolute; top: 0; bottom: 0;
+			margin-left: -1px; padding: 0; }
+		.custom-metens-input { margin: 0; padding: 5px 10px; width: 60px; }
+
+		.custom-types { position: relative; display: inline-block; }
+		.custom-types-toggle { position: absolute; top: 0; bottom: 0;
+			margin-left: -1px; padding: 0; }
+		.custom-types-input { margin: 0; padding: 5px 10px; width: 120px; }
+
+		/*.tags{ width:200px;}*/
+		.tags{ width:100%;}
+	</style>
+	<style type="text/css">.mybl{padding: 100px 10px 100px 10px;}</style>
+	<script src="js/data.js"></script>
+	<style type="text/css">
+		/*убираем стандартные стили от фреймворков*/
+		/*.ui-widget-content{
+			background:none;
+		}*/
+		input{
+			border:none !important;
+		}
+		textarea:focus, input:focus{
+			outline: none !important;
+		}
+		span.ui-spinner.ui-corner-all.ui-widget.ui-widget-content {
+			border: none !important;
+		}
+		.form-control:focus {
+			border-color:none;
+			outline: none;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+		}
+			.table > tbody > tr > td{
+			padding: 0px 8px 0px 8px;
+		}
+			.tags, .custom-types-input, .custom-metens-input, .spinner,.spinner1,.ui-spinner{
+			background-color: rgba(0,0,0,0);
+		}
+		.buttAction{
+			vertical-align: -webkit-baseline-middle;
+			text-decoration: none !important;
+			padding: 0px 6px 0px 5px !important;
+		}
+		#userName{
+			padding: 15px 15px;
+			display: inline-block;
+		}
+	</style>
+</head>
+<body>
+	<div class="container-fluid">
+		<nav role="navigation" class="navbar navbar-default">
+			<ul class="nav navbar-nav">
+				<li class="active">
+					<a href="#">Главная</a>
+				</li>
+				<li>
+					<a href="#">Доходы</a>
+				</li>
+				<li>
+					<a href="statist.html">Статитстика</a>
+				</li>
+				<li>
+					<a href="data_find.html">Поиск</a>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav" style="float: right;">
+				<li>
+					<span id='userName'></span>
+				</li>
+				<li>
+					<a href="index.php?logoff=1">Выход</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3" style="display: inline-table;">
+				<div id="datepicker" ></div>
+			</div>
+			<div class="col-sm-9 col-xs-12">			
+				<table class="table table-striped table-reflow">
+					<thead>
+						<tr>
+							<th>Значений</th>
+							<th id="statCount">0</th>
+							<th>Сумма</th>
+							<th id="statSum">0</th>
+						</tr>
+					</thead>
+				</table>
+				<table class="table table-striped table-reflow">
+					<thead>
+						<tr>
+							<th>тип</th>
+							<th>название</th>
+							<th>мера</th>
+							<th>значение</th>
+							<th>цена</th>
+							<th>действия</th>
+						</tr>
+					</thead>
+					<tbody id="dataList"></tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

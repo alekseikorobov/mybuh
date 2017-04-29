@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Статистика</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<script src="js/jquery/jquery-1.12.4.js"></script>
+	<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+	<script src="js/jquery/jquery-ui.js"></script>
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap-3.3.7-dist/css/bootstrap.css">
+	<link rel="stylesheet" href="js/jquery/jquery-ui.css">
+	<script src="js/priceformat/jquery.priceformat.min.js"></script>
+	<script src="js/statist.js"></script>
+
+	<style>
+		.year,.month{
+			display: inline-block;
+			margin: 0px 5px 0px 5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container-fluid">
+		<nav role="navigation" class="navbar navbar-default">
+			<ul class="nav navbar-nav">
+				<li>
+					<a href="data.html">Главная</a>
+				</li>
+				<li>
+					<a href="#">Доходы</a>
+				</li>
+				<li class="active">
+					<a href="#">Статитстика</a>
+				</li>
+				<li>
+					<a href="data_find.html">Поиск</a>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav" style="float: right;">
+				<li>
+					<span id='userName'></span>
+				</li>
+				<li>
+					<a href="index.php?logoff=1">Выход</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-9 col-xs-12">
+				<div>
+					<div class="year">
+						<a href="#" onclick="decrimentYear()">←</a>
+						<span id="sYear">2017</span>
+						<a href="#" onclick="incrimentYear()">→</a>
+					</div>
+					<div class="month">
+						<a href="#" onclick="decrimentMonth()">←</a>
+						<span id="sMonth">Февраль</span>
+						<a href="#" onclick="incrimentMonth()">→</a>
+					</div>
+				</div>
+				<table class="table table-striped table-reflow">
+					<thead>
+						<tr>
+							<th>Тип</th>
+							<th>Количество</th>
+							<th>Сумма</th>
+						</tr>
+					</thead>
+					<tbody id="statList">
+						<!-- <tr>
+							<th>продукты</th>
+							<th>1</th>
+							<th>1000 р.</th>
+						</tr>
+						<tr>
+							<th>продукты</th>
+							<th>1</th>
+							<th>1000 р.</th>
+						</tr> -->
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+	</div>
+	
+</body>
+</html>
